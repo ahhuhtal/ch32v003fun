@@ -5192,7 +5192,16 @@ typedef struct
 /******************  Bit definition for AFIO_PCFR1register  *******************/
 #define AFIO_PCFR1_SPI1_REMAP                   ((uint32_t)0x00000001) /* SPI1 remapping */
 #define AFIO_PCFR1_I2C1_REMAP                   ((uint32_t)0x00000002) /* I2C1 remapping */
-#define AFIO_PCFR1_USART1_REMAP                 ((uint32_t)0x00000004) /* USART1 remapping */
+
+#define AFIO_PCFR1_USART1_REMAP                 ((uint32_t)0x00200004) /* USART1 remapping */
+#define AFIO_PCFR1_USART1_REMAP_0               ((uint32_t)0x00000004) /* Bit 0 */
+#define AFIO_PCFR1_USART1_REMAP_1               ((uint32_t)0x00200000) /* Bit 1 */
+
+#define AFIO_PCFR1_USART1_NOREMAP               ((uint32_t)0x00000000) /* No remap (CK/PD4, TX/PD5, RX/PD6, CTS/PD3, RTS/PC2) */
+#define AFIO_PCFR1_USART1_REMAP_PARTIALREMAP1   ((uint32_t)0x00000004) /* Partial remap (CK/PD7, TX/PD0, RX/PD1, CTS/PC3, RTS/PC2, SW_RX/PD0) */
+#define AFIO_PCFR1_USART1_REMAP_PARTIALREMAP2   ((uint32_t)0x00200000) /* Partial remap (CK/PD7, TX/PD6, RX/PD5, CTS/PC6, RTS/PC7, SW_RX/PD6) */
+#define AFIO_PCFR1_USART1_REMAP_FULLREMAP       ((uint32_t)0x00200004) /* Full remap (CK/PC5, TX/PC0, RX/PC1, CTS/PC6, RTS/PC7, SW_RX/PC0) */
+
 #define AFIO_PCFR1_USART2_REMAP                 ((uint32_t)0x00000008) /* USART2 remapping */
 
 #define AFIO_PCFR1_USART3_REMAP                 ((uint32_t)0x00000030) /* USART3_REMAP[1:0] bits (USART3 remapping) */
